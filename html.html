@@ -10,7 +10,7 @@
 <body>
     <h2 id="h2">bakalan berubah</h2>
 
-    <h2>ga berubah</h2>
+    <h2 id="q">ga berubah</h2>
 
     <script>
         console.log('demikian')
@@ -20,6 +20,33 @@
         let u = 10;
         let s = 'sari';
         console.log('namaku ' + s + ' dan umur umurku adalah ' + u)
+
+        // tebuka
+
+        let a = 'apel'; 
+        let b = 'jeruk';
+        console.log(`buah kesukaanku adalah ${a} dan ${b}`)
+
+       document.getElementById("h2").innerHTML = 'buah kesukaanku adalah ' + a + ' dan ' + b;
+       document.getElementById("q").style.color = 'red';
+        document.getElementById("q").style.fontSize = '30px';
+
+        // ini adalah komentar
+        /* ini juga komentar */
+        // console.log('ini tidak akan muncul di console')
+
+        // tebuka
+
+        let x = 5;
+        let y = 10;
+        console.log(`hasil penjumlahan ${x} + ${y} = ${x + y}`)
+
+        document.getElementById("h2").innerHTML = `hasil penjumlahan ${x} + ${y} = ${x + y}`;
+
+// ini adalah komentar
+        /* ini juga komentar */
+        // console.log('ini tidak akan muncul di console')
+   
 
     </script>
 </body>

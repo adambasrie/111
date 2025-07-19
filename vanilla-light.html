@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrol Lampu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .lamp {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 20px auto;
+            transition: all 0.3s ease;
+        }
+
+        .lamp.on {
+            background-color: #ffd700;
+            box-shadow: 0 0 50px #ffd700;
+        }
+
+        .switch {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .switch.off {
+            background-color: #f44336;
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lamp" id="lamp"></div>
+        <button class="switch" id="switchBtn">Nyalakan</button>
+        <div class="status" id="status">Status: Mati</div>
+    </div>
+
+    <script>
+        const lamp = document.getElementById('lamp');
+        const switchBtn = document.getElementById('switchBtn');
+        const statusText = document.getElementById('status');
+        let isOn = false;
+
+        switchBtn.addEventListener('click', () => {
+            isOn = !isOn;
+            
+            // Update lampu
+            if (isOn) {
+                lamp.classList.add('on');
+                switchBtn.classList.add('off');
+                switchBtn.textContent = 'Matikan';
+                statusText.textContent = 'Status: Menyala';
+            } else {
+                lamp.classList.remove('on');
+                switchBtn.classList.remove('off');
+                switchBtn.textContent = 'Nyalakan';
+                statusText.textContent = 'Status: Mati';
+            }
+        });
+    </script>
+</body>
+</html>

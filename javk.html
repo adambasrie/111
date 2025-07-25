@@ -13,7 +13,18 @@
         <div class="status">Lamp is OFF</div>
     <script>
         const lamp = document.createElement('div');
-        lamp.className = 'lamp';        
+        lamp.className = 'lamp';  
+        document.querySelector('.container').appendChild(lamp);
+        const switchButton = document.querySelector('.switch');
+        const status = document.querySelector('.status');
+        let isOn = false;
+        switchButton.addEventListener('click', () => {
+            isOn = !isOn;
+            lamp.classList.toggle('on', isOn);
+            switchButton.classList.toggle('off', !isOn);
+            switchButton.textContent = isOn ? 'Turn Off' : 'Turn On';
+            status.textContent = `Lamp is ${isOn ? 'ON' : 'OFF'}`;
+        });      
     </script>
 </body>
 </html>
